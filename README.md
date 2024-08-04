@@ -1,4 +1,4 @@
-# Next.js Setup and API Documentation
+# RHA Leaderboard Next.js Setup and API Documentation
 =====================================
 
 ## Installation and Running
@@ -6,10 +6,10 @@
 
 To install and run the Next.js application, use the following commands:
 
-npm install
-npm run dev
-npm run build
-npm start
+-- npm install
+-- npm run dev
+-- npm run build
+-- npm start
 
 ## API Endpoints
 -------------
@@ -37,3 +37,11 @@ curl --location 'http://localhost:3000/api/register' \
        "password": "1234567890",
        "role": "sm"
      }'
+
+### Export API
+
+To test the Export API, use the following cURL command:
+
+curl --location 'http://localhost:3000/api/export' \
+--header 'month: july' \
+--header 'year: 2024'
