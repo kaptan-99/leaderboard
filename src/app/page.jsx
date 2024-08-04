@@ -5,8 +5,7 @@ const page = () => {
   return (
     <div className="flex w-full h-screen bg-green-100">
     <div className="flex-1 flex justify-center items-center">
-     <img src="leaderboard.png" alt="Rha Logo" />
-      {/* Left content goes here */}
+     <img src="leaderboard.png" alt="leaderboard.png" />
     </div>
     <div className="flex-1 flex justify-center items-center flex-col">
       {/* Right content goes here */}
