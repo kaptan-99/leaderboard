@@ -39,6 +39,50 @@ const Navbar = () => {
 
   return (
     <>
+    {isOpen && (
+        <div className="fixed inset-0 z-50 flex">
+          <div className="w-64 bg-white shadow-lg p-4">
+            <Link href="/" className="flex items-center space-x-3 rtl:space-x-reverse mb-4">
+              <img src={`https://checkin.robinhoodarmy.com/files/324549ef2a7080e.png`} className="h-10" alt="Rha Icon" />
+             
+            </Link>
+            <ul className="font-medium flex flex-col">
+            <li>
+                  <a
+                    href="#"
+                    className="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded "
+                    onClick={handleLogout}
+                  >
+                    {`Home`}
+                  </a>
+                </li>
+              {/* Conditionally render login/logout item */}
+              {userName ? (
+                <li>
+                  <a
+                    href="#"
+                    className="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded "
+                    onClick={handleLogout}
+                  >
+                    {`(${userName}) Logout`}
+                  </a>
+                </li>
+              ) : (
+                <li>
+                  <Link
+                    href="/login"
+                    className="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded "
+                    aria-current="page"
+                  >
+                    Login
+                  </Link>
+                </li>
+              )}
+            </ul>
+          </div>
+          <div className="flex-1 bg-black opacity-50" onClick={toggleSlider}></div>
+        </div>
+      )}
       <nav className="bg-green-900">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <Link href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
@@ -125,54 +169,7 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {isOpen && (
-        <div className="fixed inset-0 z-50 flex">
-          <div className="w-64 bg-white shadow-lg p-4">
-            <Link href="/" className="flex items-center space-x-3 rtl:space-x-reverse mb-4">
-              <img src={`https://checkin.robinhoodarmy.com/files/324549ef2a7080e.png`} className="h-10" alt="Rha Icon" />
-              <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-                {`Rha Leaderboard`}
-              </span>
-            </Link>
-            <ul className="font-medium flex flex-col">
-              {navbar.map((item) => (
-                <li key={item.title}>
-                  <Link
-                    href={item.url}
-                    className="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded dark:text-white"
-                    aria-current="page"
-                  >
-                    {item.title}
-                  </Link>
-                </li>
-              ))}
-              {/* Conditionally render login/logout item */}
-              {userName ? (
-                <li>
-                  <a
-                    href="#"
-                    className="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded dark:text-white"
-                    onClick={handleLogout}
-                  >
-                    {`(${userName}) Logout`}
-                  </a>
-                </li>
-              ) : (
-                <li>
-                  <Link
-                    href="/login"
-                    className="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded dark:text-white"
-                    aria-current="page"
-                  >
-                    Login
-                  </Link>
-                </li>
-              )}
-            </ul>
-          </div>
-          <div className="flex-1 bg-black opacity-50" onClick={toggleSlider}></div>
-        </div>
-      )}
+      
     </>
   );
 };
