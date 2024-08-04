@@ -45,7 +45,7 @@ const Login = () => {
   };
 
   return (
-    <div className="w-full h-screen flex justify-center items-center bg-green-100">
+    <div className="w-full h-screen flex justify-center items-center bg-green-100 md:h-screen h-[86svh]">
       <div className="login-content page-card bg-white rounded-lg shadow-lg p-6">
         <div className="page-card-head text-center mb-6">
           <img className="app-logo max-w-xs mx-auto" src={process.env.LOGO_MAIN} />
