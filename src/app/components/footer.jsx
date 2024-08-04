@@ -15,7 +15,7 @@ const Footer = () => {
             alt="FlowBite Logo"
           />
           <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-            Robin Hood Army
+            {process.env.LOGO_TITLE}
           </span>
         </a>
       </div>

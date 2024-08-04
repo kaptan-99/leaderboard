@@ -1,11 +1,12 @@
 import React from 'react'
 import navbar from '../../data/static/navbar.json'
+import Link from 'next/link'
 
 const Navbar = () => {
   return (
     <nav className="bg-green-900">
   <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-    <a
+    <Link
       href="/"
       className="flex items-center space-x-3 rtl:space-x-reverse"
     >
@@ -15,9 +16,9 @@ const Navbar = () => {
         alt="Rha Icon"
       />
       <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-        Robin Hood Army
+       {process.env.LOGO_TITLE}
       </span>
-    </a>
+    </Link>
     <button
       data-collapse-toggle="navbar-default"
       type="button"
@@ -46,13 +47,13 @@ const Navbar = () => {
       <ul className="font-medium flex flex-col  rounded-lg md:flex-row md:space-x-8 ">
         {navbar.map((item) => (
           <li key={item.title}>
-            <a
+            <Link
               href={item.url}
               className="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white"
               aria-current="page"
             >
               {item.title}
-            </a>
+            </Link>
           </li>
         ))}
        
