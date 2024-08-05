@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Logout from '../components/logout';
+import SubNavbar from '../components/subNavbar';
 
 const Dashboard = () => {
   const [user, setUser] = useState({ name: '', role: '' });
@@ -35,11 +36,14 @@ const Dashboard = () => {
   };
 
   return (
+    <>
+    <SubNavbar />
     <div className="dashboard-container p-6 h-screen">
       <h1 className="text-2xl font-bold mb-4">Dashboard</h1>
       {getRoleSpecificContent()}
       <Logout /> {/* Use the Logout component here */}
     </div>
+  </>
   );
 };
 
