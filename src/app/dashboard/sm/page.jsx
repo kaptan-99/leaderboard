@@ -61,7 +61,7 @@ const page = () => {
               {Array(4).fill().map((_, index) => (
                 <tr key={index} className=" border-b bg-gray-800 border-gray-700">
                   <th scope="row" className="px-6 py-4 font-medium whitespace-nowrap text-white">
-                    Apple MacBook Pro 17"
+                    Apple MacBook Pro 17
                   </th>
                   <td className="px-6 py-4">Silver</td>
                   <td className="px-6 py-4">Laptop</td>
