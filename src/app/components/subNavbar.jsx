@@ -13,7 +13,6 @@ const SubNavbar = () => {
                     <li>
                         <Link href="/dashboard/sm" class="text-gray-900 dark:text-white hover:underline" aria-current="sm">Social Media</Link>
                     </li>
-                   
                 </ul>
             </div>
         </div>
