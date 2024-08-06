@@ -1,3 +1,4 @@
+export const revalidate = 0;
 // src/app/api/leaderboard/route.js
 import { NextResponse } from "next/server";
 import axios from "axios";
@@ -6,6 +7,8 @@ import sharp from "sharp";
 import fs from "fs";
 import path from "path";
 import { createCanvas, loadImage } from "canvas";
+
+
 
 export async function GET() {
   try {
@@ -234,18 +237,7 @@ export async function GET() {
     fs.writeFileSync(outputPath, outputBuffer);
 
     // console.log(`Image saved at: ${outputPath}`);
-    const nowOutput = new Date();
-    const previousMonthOutput =
-      now.getMonth() === 0
-        ? "december"
-        : new Date(now.setMonth(now.getMonth() - 1))
-            .toLocaleString("default", { month: "long" })
-            .toLowerCase();
-            const previousMonthYearOutput = `${previousMonth}_${now.getFullYear()}`;
-            const previousMonthYearMongoOutput = `${previousMonth.toUpperCase()} ${now.getFullYear()}`;
-
-   
-
+    const previousMonthYearMongoOutput = `${previousMonth.toUpperCase()} ${now.getFullYear()}`;
     // console.log("Extracting and formatting required fields from each row");
     const formattedDataOutput = {
       printTime: new Date(), // City
@@ -266,6 +258,7 @@ export async function GET() {
     return NextResponse.json(
       {
         data: {
+
           printAt: new Date(),
           monthData: previousMonthYearMongoOutput,
           status: "success",
